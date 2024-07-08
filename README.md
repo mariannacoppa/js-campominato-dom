@@ -13,3 +13,4 @@ Superbonus 1
 Quando si clicca su una bomba e finisce la partita, evitare che si possa cliccare su altre celle.
 Superbonus 2
 Quando si clicca su una bomba e finisce la partita, il software scopre tutte le bombe nascoste
+
