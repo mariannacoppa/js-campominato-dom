@@ -14,3 +14,13 @@ Quando si clicca su una bomba e finisce la partita, evitare che si possa cliccar
 Superbonus 2
 Quando si clicca su una bomba e finisce la partita, il software scopre tutte le bombe nascoste
 
+Pseudocodice
+
+genero numeri casuali compresi tra 1 e 100 utilizzando MathFloor e MathRandom
+nel ciclo for imposto l'istruzione condizionale
+definisco un array numerico
+definisco un ciclo do while
+SE non è già presente il numero randomico generato, inserisco ques'ultimo nell'array
+al click sul pulsante, controllo se il numero è contenuto nell'array delle bombe
+aggiungo una classe per segnalare se è stata cliccata o meno una bomba
+mostro il punteggio, dato dalla somma dei numeri assegnati alle singole caselle cliccate non contenenti la bomba
