@@ -35,3 +35,9 @@ function removeDuplicates() {
 // chiamo le funzioni
 createBombArray();
 removeDuplicates();
+// assegno l'evento click al pulsante recuperato nel dom
+btn.addEventListener('click', function () {
+    // svuoto la griglia da tutti i suoi elementi interni (al click sl pulsante, non  si ripete la griglia)
+    grid.innerHTML = '';
+    
+});
