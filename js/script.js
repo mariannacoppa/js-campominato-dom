@@ -20,11 +20,7 @@ function createBombArray() {
         // genero 16 numeri casuali
         let randomNumber = Math.floor((Math.random() * 100 + 1));
         bombsArray.push(randomNumber);
-    }
-}
-// impedisco la creazione di bombe con lo stesso numero
-function removeDuplicates() {
-    for (let i = 0; i < bombsArray.length; i++) {
+        // impedisco la creazione di bombe con lo stesso numero
         for (let j = 0; j < bombsArray.length; j++) {
             if (bombsArray[i] == bombsArray[j] && i != j) {
                 bombsArray[i] = Math.floor((Math.random() * 100 + 1));
@@ -32,9 +28,18 @@ function removeDuplicates() {
         }
     }
 }
+// function removeDuplicates() {
+//     for (let i = 0; i < bombsArray.length; i++) {
+//         for (let j = 0; j < bombsArray.length; j++) {
+//             if (bombsArray[i] == bombsArray[j] && i != j) {
+//                 bombsArray[i] = Math.floor((Math.random() * 100 + 1));
+//             }
+//         }
+//     }
+// }
 // chiamo le funzioni
 createBombArray();
-removeDuplicates();
+// removeDuplicates();
 // assegno l'evento click al pulsante recuperato nel dom
 btn.addEventListener('click', function () {
     // svuoto la griglia da tutti i suoi elementi interni (al click sl pulsante, non  si ripete la griglia)
