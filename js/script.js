@@ -39,5 +39,8 @@ removeDuplicates();
 btn.addEventListener('click', function () {
     // svuoto la griglia da tutti i suoi elementi interni (al click sl pulsante, non  si ripete la griglia)
     grid.innerHTML = '';
-    
+    // eseguo un ciclo di 100 iterazioni per creare la griglia
+    for (let i = 0; i < 100; i++) {
+        
+    }
 });
