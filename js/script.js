@@ -14,3 +14,11 @@ function createSquare() {
     // restituisco il quadrato contenuto nella variabile currentElement
     return currentElement;
 }
+// definisco la funzione che creale bombe
+function createBombArray() {
+    for (let i = 0; i < 16; i++) {
+        // genero 16 numeri casuali
+        let randomNumber = Math.floor((Math.random() * 100 + 1));
+        bombsArray.push(randomNumber);
+    }
+}
