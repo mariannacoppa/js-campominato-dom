@@ -14,7 +14,7 @@ function createSquare() {
     // restituisco il quadrato contenuto nella variabile currentElement
     return currentElement;
 }
-// definisco la funzione che creale bombe
+// definisco la funzione che crea le bombe
 function createBombArray() {
     for (let i = 0; i < 16; i++) {
         // genero 16 numeri casuali
@@ -22,3 +22,16 @@ function createBombArray() {
         bombsArray.push(randomNumber);
     }
 }
+// impedisco la creazione di bombe con lo stesso numero
+function removeDuplicates() {
+    for (let i = 0; i < bombsArray.length; i++) {
+        for (let j = 0; j < bombsArray.length; j++) {
+            if (bombsArray[i] == bombsArray[j] && i != j) {
+                bombsArray[i] = Math.floor((Math.random() * 100 + 1));
+            }
+        }
+    }
+}
+// chiamo le funzioni
+createBombArray();
+removeDuplicates();
