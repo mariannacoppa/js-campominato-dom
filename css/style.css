@@ -3,16 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-header, .square {
+
+header,
+.square {
     color: white;
 }
+
 header {
     padding: 20px 10px;
     background-color: navy;
     margin-bottom: 50px;
-    
     text-align: right;
 }
+
 #start {
     border: none;
     color: navy;
@@ -20,6 +23,7 @@ header {
     padding: 10px;
     border-radius: 20px;
 }
+
 #grid {
     width: 500px;
     height: 500px;
@@ -27,6 +31,7 @@ header {
     display: flex;
     flex-wrap: wrap;
 }
+
 .square {
     display: flex;
     justify-content: center;
@@ -36,6 +41,11 @@ header {
     background-color: darkgreen;
     border: 1px solid white;
 }
+
 .clicked-blue {
     background-color: rgb(3, 181, 181);
+}
+
+.clicked-red {
+    background-color: rgb(187, 18, 18);
 }
