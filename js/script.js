@@ -39,24 +39,30 @@ removeDuplicates();
 btn.addEventListener('click', function () {
     // svuoto la griglia da tutti i suoi elementi interni (al click sl pulsante, non  si ripete la griglia)
     grid.innerHTML = '';
-    // eseguo un ciclo di 100 iterazioni per creare la griglia
+    // eseguo un ciclo di 100 iterazioni per creare una griglia
     for (let i = 0; i < 100; i++) {
-    // creo il singolo quadrato chiamando la funzione createSquare
-    let currentSquare = createSquare();
-    // aggiungo l'evento click al quadrato creato
-    let listener = function () {
-        console.log(i + 1);
-        // se clicco una bomba
-        if (bombsArray.indexOf(i, 0) != -1) {
-            // la casella diventa rossa
-            this.classList.toggle('clicked-red');
-            // impedisce di cliccare altre caselle
-            currentSquare.removeEventListener('click', listener);
+        // creo il singolo quadrato chiamando la funzione createSquare
+        let currentSquare = createSquare();
+        // aggiungo l'evento click al quadrato creato
+        let listener = function () {
+            console.log(i + 1);
+            // se clicco una bomba
+            if (bombsArray.indexOf(i, 0) != -1) {
+                // la casella diventa rossa
+                this.classList.toggle('clicked-red');
+                // impedisce di cliccare altre caselle
+                currentSquare.removeEventListener('click', listener);
+                // this.removeEventListener('click', this);
+            }
+            else {
+                // aggiungo/tolgo la classe clicked-blue e lo mostro in console
+                this.classList.toggle('clicked-blue');
+            }
         }
-        else {
-            // aggiungo/tolgo la classe clicked-blue e lo mostro in console
-            this.classList.toggle('clicked-blue');
-        }
-    }
+        currentSquare.addEventListener('click', listener);
+        // assegno il numero progressivo
+        currentSquare.innerText = i + 1;
+        // appendo il quadrato all'interno della griglia
+        grid.append(currentSquare);
     }
 });
