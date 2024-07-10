@@ -41,6 +41,22 @@ btn.addEventListener('click', function () {
     grid.innerHTML = '';
     // eseguo un ciclo di 100 iterazioni per creare la griglia
     for (let i = 0; i < 100; i++) {
-        
+    // creo il singolo quadrato chiamando la funzione createSquare
+    let currentSquare = createSquare();
+    // aggiungo l'evento click al quadrato creato
+    let listener = function () {
+        console.log(i + 1);
+        // se clicco una bomba
+        if (bombsArray.indexOf(i, 0) != -1) {
+            // la casella diventa rossa
+            this.classList.toggle('clicked-red');
+            // impedisce di cliccare altre caselle
+            currentSquare.removeEventListener('click', listener);
+        }
+        else {
+            // aggiungo/tolgo la classe clicked-blue e lo mostro in console
+            this.classList.toggle('clicked-blue');
+        }
+    }
     }
 });
